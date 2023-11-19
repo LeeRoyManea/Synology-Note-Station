@@ -1,0 +1,40 @@
+{
+  "app-id": "org.leeroymanea.synology-note-station",
+  "runtime": "org.freedesktop.Platform",
+  "runtime-version": "22.08",
+  "sdk": "org.freedesktop.Sdk",
+  "command": "/app/share/applications/org.leeroymanea.synology-note-station/launch.sh",
+  "finish-args": [
+    "--share=network",
+    "--socket=x11",
+    "--socket=wayland",
+    "--share=ipc",
+    "--filesystem=host",
+    "--talk-name=org.freedesktop.Flatpak"
+  ],
+  "modules": [
+    {
+      "name": "synology-note-station",
+      "buildsystem": "simple",
+      "sources": [
+        {
+          "type": "dir",
+          "path": "."
+        }
+      ],
+      "build-commands": [
+       "mkdir -p /app/share/applications/org.leeroymanea.synology-note-station/",
+       "cp -r synology-note-station/* /app/share/applications/org.leeroymanea.synology-note-station/",
+       "mkdir -p /app/share/applications/org.leeroymanea.synology-note-station/",
+       "install org.leeroymanea.synology-note-station.desktop /app/share/applications/org.leeroymanea.synology-note-station.desktop",
+       
+       "mkdir -p /app/share/icons/hicolor/",
+       "mv icons/* /app/share/icons/hicolor/"
+      ],
+      "cleanup": [
+        "/app/share/doc",
+        "/app/share/man"      ]
+    }
+  ]
+}
+
