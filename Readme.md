@@ -1,16 +1,22 @@
-If you want to run Synology Note Station on Fedora or other distros like me,
-you can use my script and flatpak manifest to install it.
+<h1> Synology Note Station Flatpak Manifest</h1>
+
+With this manifest you can install the "Synology Note Station" Flatpak on every Linux Distro 
 
 Dependencies:
 - flatpak-builder
 - org.freedesktop.Platform 22.08
 
-Installation:
-1. clone projekt 
-2. cd into the folder
-3. chmod +x install.sh
-4. ./install.sh
+ Installation:
+```shell
+run install.sh 
+```
+or 
+```shell
+wget https://global.synologydownload.com/download/Utility/NoteStationClient/2.2.4-703/Ubuntu/x86_64/synology-note-station-client-2.2.4-703-linux-x64.deb
+# ensure filename is synology-note-station-client-2.2.4-703-linux-x64.deb
+flatpak-builder --install --user --force-clean build-dir org.leeroymanea.synology-note-station.json
+```
 
 Todos:
-Update manifest.json to work without install.sh
-Publish on Flathub
+- Find a way to download a .deb file in the flatpak manifest script
+- Publish on Flathub

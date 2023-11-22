@@ -18,23 +18,28 @@
       "buildsystem": "simple",
       "sources": [
         {
-          "type": "dir",
-          "path": "."
+          "type": "file",
+          "path": "synology-note-station-client-2.2.4-703-linux-x64.deb"
+        },
+        {
+          "type": "file",
+          "path": "org.leeroymanea.synology-note-station.desktop"
         }
       ],
       "build-commands": [
-       "mkdir -p /app/share/applications/org.leeroymanea.synology-note-station/",
-       "cp -r synology-note-station/* /app/share/applications/org.leeroymanea.synology-note-station/",
-       "mkdir -p /app/share/applications/org.leeroymanea.synology-note-station/",
-       "install org.leeroymanea.synology-note-station.desktop /app/share/applications/org.leeroymanea.synology-note-station.desktop",
-       
-       "mkdir -p /app/share/icons/hicolor/",
-       "mv icons/* /app/share/icons/hicolor/"
+        "mkdir -p /app/share/applications/org.leeroymanea.synology-note-station/",
+        "mkdir -p /app/share/icons/hicolor/",
+        "ar x synology-note-station-client-2.2.4-703-linux-x64.deb",
+        "tar -xf data.tar.xz",
+        "cp -r usr/share/icons/hicolor/* /app/share/icons/hicolor/",
+        "cp -r opt/synology-note-station/* /app/share/applications/org.leeroymanea.synology-note-station/",
+        "find usr/share/icons/hicolor -type f -execdir mv {} org.leeroymanea.synology-note-station.png \\;",
+        "sed -i 's/\\/opt\\/synology-note-station/\\/app\\/share\\/applications\\/org.leeroymanea.synology-note-station/g' /app/share/applications/org.leeroymanea.synology-note-station/launch.sh"
       ],
       "cleanup": [
         "/app/share/doc",
-        "/app/share/man"      ]
+        "/app/share/man"
+      ]
     }
   ]
 }
-
