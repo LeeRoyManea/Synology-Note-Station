@@ -9,18 +9,17 @@
   <summary>Powerful note-taking application for personal and professional use</summary>
   <description>
     <p>Synology Note Station is a powerful note-taking application designed for personal and professional use. Organize your thoughts, ideas, and tasks efficiently with Note Station's intuitive interface and collaborative features.</p>
-    <p>NOTE: A system tray extension, such as AppIndicator or TopIcons, is highly recommended for better experience.</p>
     <p>NOTE: This wrapper is not verified by, affiliated with, or supported by Synology Inc.</p>
   </description>
   <categories>
     <category>Office</category>
   </categories>
-<!--  <screenshots>-->
-<!--    <screenshot type="default">-->
-<!--      <image>https://github.com/com.github.leeroymanea.synology-note-station.png</image>-->
-<!--      <caption>Example screenshot caption</caption>-->
-<!--    </screenshot>-->
-<!--  </screenshots>-->
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/LeeRoyManea/Synology-Note-Station/e5b3649f5d512729c498bd1f99250753c09fb2d1/com.github.leeroymanea.synology-note-station.png</image>
+      <caption>Example screenshot caption</caption>
+    </screenshot>
+  </screenshots>
   <launchable type="desktop-id">com.github.leeroymanea.synology-note-station.desktop</launchable>
   <releases>
     <release version="2.2.4-703" date="2023-10-31"/>
