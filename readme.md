@@ -17,7 +17,7 @@ So i decided to create a Flatpak manifest everyone can use.
 - flatpak-builder
 
 ```shell
-flatpak-builder --install --user --force-clean build-dir io.github.leeroymanea.synology-note-station.yaml
+flatpak-builder --install --user --force-clean build-dir com.synology.synology-note-station.yaml
 ```
 
 ## Usage
@@ -25,7 +25,7 @@ flatpak-builder --install --user --force-clean build-dir io.github.leeroymanea.s
 Once installed, you can launch Synology Note Station from your application menu or run it from the command line using:
 
 ```bash
-flatpak run io.github.leeroymanea.synology-note-station
+flatpak run com.synology.synology-note-station
 ```
 
 ## License
